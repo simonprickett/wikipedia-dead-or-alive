@@ -61,22 +61,19 @@ test('Robin Williams, dead...', async () => {
 });
 
 // Tests someone who doesn't have a Wikipedia page.
-test('Simon Prickett, not on wikipedia...', () => {
-  try {
-    expect(wikipediaDeadOrAlive.getStatus('Simon_Prickett')).rejects;
-  } catch (e) {}
+test('Simon Prickett, not on wikipedia...', async () => {
+  expect.assertions(1);
+  await expect(wikipediaDeadOrAlive.getStatus('Simon_Prickett')).rejects.toThrow('No extract: Page doesn\'t exist, or wrong type of page!');
 });
 
 // Test for no pageName provided.
-test('pageName is undefined...', () => {
-  try {
-    expect(wikipediaDeadOrAlive.getStatus()).rejects;
-  } catch (e) {}
+test('pageName is undefined...', async () => {
+  expect.assertions(1);
+  await expect(wikipediaDeadOrAlive.getStatus()).rejects.toThrow('pageName not provided!');
 });
 
 // Test for zero length pageName.
-test('pageName is an empty string...', () => {
-  try {
-    expect(wikipediaDeadOrAlive.getStatus('')).rejects;
-  } catch (e) {}
+test('pageName is an empty string...', async () => {
+  expect.assertions(1);
+  await expect(wikipediaDeadOrAlive.getStatus('')).rejects.toThrow('pageName not provided!');
 });
