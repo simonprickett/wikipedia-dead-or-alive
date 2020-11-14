@@ -8,12 +8,12 @@ This is a small library that attempts to determine if someone is dead or alive, 
 const wikipediaDeadOrAlive = require('wikipediadeadoralive');
 
 const deadOrAlive = async () => {
-    try {
-        const result = await wikipediaDeadOrAlive.getStatus('Robin_Williams');
-        console.log(result);
-    } catch (e) {
-        // Oh no!
-    }
+  try {
+    const result = await wikipediaDeadOrAlive.getStatus('Robin_Williams');
+    console.log(result);
+  } catch (e) {
+    // Oh no!
+  }
 };
 
 deadOrAlive();
