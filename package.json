@@ -1,6 +1,6 @@
 {
   "name": "wikipediadeadoralive",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Wikipedia Celebrity Dead or Alive",
   "main": "index.js",
   "scripts": {
