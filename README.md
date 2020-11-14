@@ -1,6 +1,6 @@
 # Wikipedia Dead or Alive
 
-This is a small library that attempts to determine if someone is dead or alive, by looking at Wikipedia data.  It's had minmal testing, so if you find a person that's on Wikipedia that this doesn't work for, feel free to raise an issue, or submit a PR and add tests.
+This is a small library that attempts to determine if someone is dead or alive, by looking at Wikipedia data.  It's had minimal testing, so if you find a person that's on Wikipedia that this doesn't work for, feel free to raise an issue, or submit a PR and add tests.
 
 ## Example Usage
 
