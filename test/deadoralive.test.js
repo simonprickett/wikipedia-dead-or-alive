@@ -1,6 +1,6 @@
 const wikipediaDeadOrAlive = require('../index.js');
 
-// Tests soneone who is alive.
+// Tests someone who is alive.
 test('Justin Bieber, alive...', async () => {
   const result = await wikipediaDeadOrAlive.getStatus('Justin_Bieber');
 
