@@ -21,11 +21,14 @@ const wikipediaDeadOrAlive = {
 
     const pageSummary = await response.json();
 
-    const extractText = pageSummary.query.pages[Object.keys(pageSummary.query.pages)[0]].extract;
+    let extractText = pageSummary.query.pages[Object.keys(pageSummary.query.pages)[0]].extract;
 
     if (! extractText) {
       throw new Error('No extract: Page doesn\'t exist, or wrong type of page!');
     }
+
+    extractText = extractText.replace(/Jr./g, 'Jr');
+    extractText = extractText.replace(/Sr./g, 'Sr');
 
     const firstSentence = extractText.substring(0, extractText.indexOf('.') + 1);
 

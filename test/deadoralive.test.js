@@ -60,6 +60,26 @@ test('Robin Williams, dead...', async () => {
   expect(result.description.length).toBeGreaterThan(0);
 });
 
+// Tests someone with Jr. in their name.
+test('Nile Rodgers, alive...', async () => {
+  const result = await wikipediaDeadOrAlive.getStatus('Nile_Rodgers');
+
+  expect(result.name).toBe('Nile Rodgers');
+  expect(result.dead).toBe(false);
+  expect(result.died).toBeNull();
+  expect(result.description.length).toBeGreaterThan(0);
+});
+
+// Tests someone with Sr. in their name.
+test('Robert Downey Sr., alive...', async () => {
+  const result = await wikipediaDeadOrAlive.getStatus('Robert_Downey_Sr.');
+
+  expect(result.name).toBe('Robert Downey Sr.');
+  expect(result.dead).toBe(false);
+  expect(result.died).toBeNull();
+  expect(result.description.length).toBeGreaterThan(0);
+});
+
 // Tests someone who doesn't have a Wikipedia page.
 test('Simon Prickett, not on wikipedia...', async () => {
   expect.assertions(1);
