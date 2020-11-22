@@ -28,6 +28,7 @@ const wikipediaDeadOrAlive = {
     }
 
     extractText = extractText.replace(/Jr./g, 'Jr');
+    extractText = extractText.replace(/Sr./g, 'Sr');
 
     const firstSentence = extractText.substring(0, extractText.indexOf('.') + 1);
 
