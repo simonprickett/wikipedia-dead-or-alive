@@ -86,6 +86,16 @@ test('Simon Prickett, not on wikipedia...', async () => {
   await expect(wikipediaDeadOrAlive.getStatus('Simon_Prickett')).rejects.toThrow('No extract: Page doesn\'t exist, or wrong type of page!');
 });
 
+// Tests for trailing space after name in description.
+test('Lisa Lopes, for for trailing space after name in description...', async () => {
+  const result = await wikipediaDeadOrAlive.getStatus('Lisa_Lopes');
+
+  expect(result.name).toBe('Lisa Lopes');
+  expect(result.dead).toBe(true);
+  expect(result.died).toBe('2002');
+  expect(result.description.length).toBeGreaterThan(0);
+  expect(result.description.startsWith('Lisa Nicole Lopes,')).toBe(true);
+});
 // Test for no pageName provided.
 test('pageName is undefined...', async () => {
   expect.assertions(1);
