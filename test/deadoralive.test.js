@@ -94,7 +94,7 @@ test('Lisa Lopes, for for trailing space after name in description...', async ()
   expect(result.dead).toBe(true);
   expect(result.died).toBe('2002');
   expect(result.description.length).toBeGreaterThan(0);
-  expect(result.description.startsWith('Lisa Nicole Lopes,').toBe(true));
+  expect(result.description.startsWith('Lisa Nicole Lopes,')).toBe(true);
 });
 // Test for no pageName provided.
 test('pageName is undefined...', async () => {

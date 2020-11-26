@@ -35,7 +35,9 @@ const wikipediaDeadOrAlive = {
     const openBracketPos = firstSentence.indexOf('(');
     const closeBracketPos = firstSentence.lastIndexOf(')');
 
-    const description = `${firstSentence.substring(0, openBracketPos).trim()} ${firstSentence.substring(closeBracketPos + 1).trim()}`;
+    const descriptionPart1 = firstSentence.substring(0, openBracketPos).trim();
+    const descriptionPart2 = firstSentence.substring(closeBracketPos + 1).trim();
+    const description = `${descriptionPart1}${descriptionPart2.startsWith(',') ? '' : ' '}${descriptionPart2}`;
     
     let datePart = firstSentence.substring(openBracketPos, closeBracketPos + 1).trim();
     const firstSemicolonPos = datePart.indexOf(';');
