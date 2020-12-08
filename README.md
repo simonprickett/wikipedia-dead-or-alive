@@ -57,7 +57,7 @@ The tests for this project use [Jest](https://jestjs.io/).  To run the tests:
 
 ```bash
 $ npm install
-$ npm run test
+$ npm test
 ```
 
 Example test run output:
